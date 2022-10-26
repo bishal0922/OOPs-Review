@@ -1,5 +1,7 @@
 # Object Oriented Programming Concepts
 
+by Bishal Giri
+
 ### Why?
 __Solve real world problems easily__
 
@@ -150,6 +152,7 @@ ___
     // p.name is an attribute of Person class
     // p.age is an attribute of Person class
 ```
+----
 
 ## Static keyword
 
@@ -182,5 +185,89 @@ ___
     //count is shared by all the objects of Person class
     System.out.println(Person.count); // 2
 ```
+---
+## This keyword
 
- 
+- Used to refer to the current object
+- Used to refer to the current class
+
+```java
+    //this keyword to call other constructors
+    class Person{ 
+        String name; // attribute
+        int age; // attribute
+        // constructor
+        public Person(String name, int age){ // constructor signature
+            this.name = name; // constructor body
+            this.age = age; // constructor body
+        } 
+        // constructor
+        public Person(String name){ // constructor signature
+            this(name, 20); // constructor body
+        } 
+    }
+```
+
+---
+
+## Inheritance
+
+- Ability of a class to inherit the attributes and methods of another class
+- Super class: class whose attributes and methods are inherited
+- Sub class: class that inherits the attributes and methods of another class
+  - Sub class can have its own attributes and methods
+  - Sub class can override the methods of the super class
+  - Sub class can extend the methods of the super class
+
+
+```java
+    //inheritance
+    class Person{ 
+        String name; // attribute
+        int age; // attribute
+        // constructor
+        public Person(String name, int age){ // constructor signature
+            this.name = name; // constructor body
+            this.age = age; // constructor body
+        } 
+        // method
+        void speak(){ // method signature
+            System.out.println("My name is "+name); // method body
+        } 
+    }
+    //sub class
+    class Student extends Person{ 
+        String major; // attribute
+        // constructor
+        public Student(String name, int age, String major){ // constructor signature
+            super(name, age); // constructor body
+            this.major = major; // constructor body
+        } 
+        // method
+        void speak(){ // method signature
+            System.out.println("My name is "+name+" and my major is "+major); // method body
+        } 
+    }
+```
+  
+```java
+    Person p = new Person("John", 20); // p is an object of Person class
+    Student s = new Student("Albert", 20, "CS"); // s is an object of Student class
+    // p.name is an attribute of Person class
+    // p.age is an attribute of Person class
+    // s.name is an attribute of Student class
+    // s.age is an attribute of Student class
+    // s.major is an attribute of Student class
+    // p.speak() is a method of Person class
+    // s.speak() is a method of Student class
+    p.speak(); // My name is John
+    s.speak(); // My name is Albert and my major is CS
+```
+
+### Super keyword
+
+- Used to refer to the super class
+- Used to call the constructor of the super class
+- Every class has an object class 
+- **Object class is the super class of all the classes**
+
