@@ -282,3 +282,137 @@ ___
 - Every class has an object class 
 - **Object class is the super class of all the classes**
 
+---
+
+## Encapsulation
+
+- Hiding the implementation details of a class from the outside world
+- Data hiding
+- Access modifiers: public, private, protected, default
+  - **Public**: accessible from anywhere
+  - **Private**: accessible only within the class
+  - **Protected**: accessible within the class and the sub classes
+  - **Default**: accessible within the package
+
+
+```java
+    //encapsulation example
+    class Person{ 
+        private String name; // attribute
+        private int age; // attribute
+        // constructor
+        public Person(String name, int age){ // constructor signature
+            this.name = name; // constructor body
+            this.age = age; // constructor body
+        } 
+        // method
+        void speak(){ // method signature
+            System.out.println("My name is "+name); // method body
+        } 
+    }
+    //here name and age are private
+    //so they are not accessible from outside the class
+```
+
+### Getters and Setters
+```java
+    //getters and setters
+    class Person{ 
+        private String name; // attribute
+        private int age; // attribute
+        // constructor
+        public Person(String name, int age){ // constructor signature
+            this.name = name; // constructor body
+            this.age = age; // constructor body
+        } 
+        // method
+        void speak(){ // method signature
+            System.out.println("My name is "+name); // method body
+        } 
+        // getter
+        public String getName(){ // method signature
+            return name; // method body
+        } 
+        // setter
+        public void setName(String name){ // method signature
+            this.name = name; // method body
+        } 
+    }
+```
+---
+## Abstraction
+
+- Hiding the implementation details of a class from the outside world
+- Data hiding
+- Different from encapsulation because it is achieved by using abstract classes and interfacesobject but they can have constructors
+- abstract classes and interfaces cannot be instantiated
+- abstract classes cannot have child classes
+
+```java
+    //abstraction example
+    abstract class Person{ 
+        String name; // attribute
+        int age; // attribute
+        // constructor
+        public Person(String name, int age){ // constructor signature
+            this.name = name; // constructor body
+            this.age = age; // constructor body
+        } 
+        // method
+        abstract void speak(); // method signature
+    }
+```
+
+```java
+    class Student extends Person{ 
+        String major; // attribute
+        // constructor
+        public Student(String name, int age, String major){ // constructor signature
+            super(name, age); // constructor body
+            this.major = major; // constructor body
+        } 
+        // method
+        void speak(){ // method signature
+            System.out.println("My name is "+name+" and my major is "+major); // method body
+        } 
+    }
+```
+
+---
+## Interaces
+
+- **Implements**
+- Interfaces are similar to abstract classes
+- Interfaces cannot have constructors
+- Interfaces cannot have attributes
+- Interfaces can have only abstract methods
+- Interfaces can have only static and final variables
+- Interfaces can have only public methods
+- Interfaces can have only public variables
+- Interfaces can have only public nested classes
+- Interfaces can have only public nested interfaces
+
+```java
+    //interfaces
+    //all functions are abstract by default
+    interface Person{ 
+        String name; // attribute
+        int age; // attribute
+        // method
+        void speak(); // method signature
+    }
+
+    //implements
+    class Student implements Person{ 
+        String major; // attribute
+        // constructor
+        public Student(String name, int age, String major){ // constructor signature
+            super(name, age); // constructor body
+            this.major = major; // constructor body
+        } 
+        // method
+        void speak(){ // method signature
+            System.out.println("My name is "+name+" and my major is "+major); // method body
+        } 
+    }
+```
